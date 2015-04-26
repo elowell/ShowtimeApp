@@ -199,5 +199,28 @@ public class SeriesData extends LinkedHashMap<String, String> {
         if(str != "")   return str;
         else            return "\nThere were no results for your search.";
     }
+
+    //prints entries in fancy format
+    public String toStringFancy() {
+        String str = "";
+
+        for (String field : fields) {
+            if (this.get(field) != null) {
+                if (field != "seriesid")
+                    str += this.get(field) + "\n\n";
+            }
+        }
+
+        Iterator entries = this.entrySet().iterator();
+        while(entries.hasNext()) {
+            LinkedHashMap.Entry entry = (LinkedHashMap.Entry) entries.next();
+
+            if (!fields.contains(entry.getKey().toString()))
+                str += entry.getKey().toString() + ": " + entry.getValue().toString() + "\n\n";
+        }
+
+        if(str != "")   return str;
+        else            return "\nThere were no results for your search.";
+    }
 }
 
