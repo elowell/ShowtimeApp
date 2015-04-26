@@ -76,6 +76,10 @@ public class SeriesDetail extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 db.deleteShow(seriesData.get("seriesid"));
+                Intent intent = new Intent(SeriesDetail.this, SavedShows.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }
