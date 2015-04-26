@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/Users/jklein/Desktop/ShowtimeApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/jklein/Desktop/ShowtimeApp/app/build/intermediates/pre-dexed/debug/classes-54166269401df1166531ea512e070ad6852781dc.jar" />
-    </item>
-    <item
-        jar="/Users/jklein/Desktop/ShowtimeApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jar="/Users/tfarrell/Code/ShowtimeApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/jklein/Desktop/ShowtimeApp/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-7eefb2f90b2ecda4d158089aa340a727473bdd12.jar" />
+        <dex dex="/Users/tfarrell/Code/ShowtimeApp/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-cf7c1b4d346bc3c383a4b6fe0fd20be27a74b76f.jar" />
     </item>
     <item
-        jar="/Users/jklein/Desktop/ShowtimeApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jar="/Users/tfarrell/Code/ShowtimeApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/jklein/Desktop/ShowtimeApp/app/build/intermediates/pre-dexed/debug/classes-489e9c38631d693f403e5e60b124f01e6de6f05d.jar" />
+        <dex dex="/Users/tfarrell/Code/ShowtimeApp/app/build/intermediates/pre-dexed/debug/classes-5ba312769ce6cd4ffe70835ca1cf48d0806e1d0f.jar" />
     </item>
     <item
-        jar="/Users/jklein/Desktop/ShowtimeApp/app/src/main/java/libs/volley.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
-        <dex dex="/Users/jklein/Desktop/ShowtimeApp/app/build/intermediates/pre-dexed/debug/volley-b0723e6732efa39db25911d17c807e530b788a79.jar" />
-    </item>
-    <item
-        jar="/Users/jklein/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jar="/Users/tfarrell/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/jklein/Desktop/ShowtimeApp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-bf0d5ab60296cf0c99d9e6fed8288184dd715284.jar" />
+        <dex dex="/Users/tfarrell/Code/ShowtimeApp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-0d829673a3189b7ad5955aceeb14b5a91ecae030.jar" />
+    </item>
+    <item
+        jar="/Users/tfarrell/Code/ShowtimeApp/app/src/main/java/libs/volley.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
+        <dex dex="/Users/tfarrell/Code/ShowtimeApp/app/build/intermediates/pre-dexed/debug/volley-194fa6760a3c34c0564519a55a4c448f27aa50b5.jar" />
+    </item>
+    <item
+        jar="/Users/tfarrell/Code/ShowtimeApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/tfarrell/Code/ShowtimeApp/app/build/intermediates/pre-dexed/debug/classes-6e6cbb6dd0c8d300365910485bb6b358f37fe391.jar" />
     </item>
 
 </items>

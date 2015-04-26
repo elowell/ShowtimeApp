@@ -52,7 +52,7 @@ public class DBHelper extends SQLiteOpenHelper {
                                              marco_polo};
 
     /* SERIES TABLE */
-    final static String SERIES_TABLE_NAME = "series";
+    final static String SERIES_TABLE_NAME = "Series";
     final static String SERIES_ID   = "seriesid";
     final static String SERIES_NAME = "seriesname";
     final static String GENRE       = "genre";
@@ -76,7 +76,7 @@ public class DBHelper extends SQLiteOpenHelper {
     final private static String CREATE_SERIES_CMD =
 
         "CREATE TABLE series ("+ SERIES_ID + " TEXT PRIMARY KEY, "+ SERIES_NAME + " TEXT NOT NULL, "
-                               + GENRE + "TEXT, "+ OVERVIEW + " TEXT, "+ STATUS + " TEXT, "
+                               + GENRE + " TEXT, "+ OVERVIEW + " TEXT, "+ STATUS + " TEXT, "
                                + DAYOFWEEK + " TEXT, "+ TIME + " TEXT, "+ NETWORK + " TEXT, "
                                + RUNTIME + " TEXT, "+ RATING + " TEXT, "+ RATINGCOUNT + " TEXT, "
                                + ACTORS + " TEXT, "+ CONTENTRATING + " TEXT, "

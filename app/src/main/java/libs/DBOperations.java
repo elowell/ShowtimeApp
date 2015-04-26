@@ -2,11 +2,15 @@ package libs;
 
 import android.content.ContentValues;
 import android.content.Context;
+
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import android.util.Log;
+
 
 /**
  * Created by nickhall on 4/26/15.
@@ -24,10 +28,10 @@ public class DBOperations {
     }
 
     //Write (save) show to database.
-
     public int saveShow(SeriesData series) {
         //Get writeable database
         SQLiteDatabase db = dbHelper.getWritableDatabase();
+
         //Get values to be stored in database from saved show.
         ContentValues values = new ContentValues();
         values.put("seriesid", series.get("seriesid"));
@@ -46,20 +50,22 @@ public class DBOperations {
         values.put("firstaired", series.get("firstaired"));
         values.put("nextairdate", series.get("nextairdate"));
 
+        Log.d("DBHelper.saveShow: ", values.toString());
 
         //Inserting a row into the database table.
-        long show_Id = db.insert("series", null, values);
+        long show_Id = db.insert("Series", null, values);
         db.close();
         return (int) show_Id;
     }
 
 
-    public void deleteShow(int show_Id) {
+    public void deleteShow(String show_Id) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        db.delete("series", "seriesid= ?", new String[] {String.valueOf(show_Id)});
+        db.delete("Series", "seriesid= ?", new String[] {String.valueOf(show_Id)});
         db.close();
     }
 
+    //gets all saved series and returns in datalistview format
     public List<SeriesData> getDataForListView() {
         //List for storing the data
         List<SeriesData> listOfSeries = new ArrayList<SeriesData>();
@@ -68,7 +74,9 @@ public class DBOperations {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         //Create a selection query
-        String selectQuery = "SELECT seriesid,seriesname,genre,overview,status,dayofweek,time,network,runtime,rating,ratingcount,actors,contentrating,firstaired,nextairdate FROM series";
+        String selectQuery = "SELECT seriesid, seriesname, genre, overview, status, "
+                    + "dayofweek, time, network, runtime, rating, ratingcount, actors, "
+                    + "contentrating, firstaired, nextairdate FROM Series;";
 
         Cursor cursor = db.rawQuery(selectQuery, null);
 

@@ -21,11 +21,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import libs.DBHelper;
+import libs.DBOperations;
 import libs.SeriesData;
 
 
 public class SavedShows extends ActionBarActivity {
+
+    final Context mContext = this;
 
     //Trying to get intent passing to work
 
@@ -59,8 +61,6 @@ public class SavedShows extends ActionBarActivity {
         });
 
 
-
-
         //get seriesdata for user from DB
         //SeriesData[] user_favs = DBHelper.getSeriesData();
         /*                         ^ not implemented yet, use test structs in DBHelper */
@@ -73,8 +73,6 @@ public class SavedShows extends ActionBarActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                //.putExtra("keywords",actv.getText().toString()));
-                //actv.setText("");
             }
         });
 
@@ -156,10 +154,6 @@ public class SavedShows extends ActionBarActivity {
 
     }
 
-
-
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -189,13 +183,9 @@ public class SavedShows extends ActionBarActivity {
     public List<SeriesData> getDataForListView() {
         List<SeriesData> listOfSeries = new ArrayList<SeriesData>();
 
-        for(int i=0; i<DBHelper.TEST.length; ++i) {
+        DBOperations db = new DBOperations(mContext);
+        listOfSeries = db.getDataForListView();
 
-            DBHelper.TEST[i].fill();
-            SeriesData series = DBHelper.TEST[i];
-            listOfSeries.add(series);
-
-        }
         return listOfSeries;
     }
 

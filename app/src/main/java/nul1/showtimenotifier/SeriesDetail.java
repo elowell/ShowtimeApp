@@ -3,6 +3,7 @@ package nul1.showtimenotifier;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
+import libs.DBOperations;
 import libs.SeriesData;
 
 /* created by nickhall 4/23/15 */
@@ -29,8 +31,9 @@ public class SeriesDetail extends ActionBarActivity {
 
     //Initialize a SeriesData class object to get and display all of the show information.
     SeriesData seriesData = new SeriesData();
-    //Create dummy hashmap object
-    HashMap<String, String> testData;
+
+    //declare dboperations instance
+    DBOperations db = new DBOperations(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,22 @@ public class SeriesDetail extends ActionBarActivity {
         textviewname = (TextView) findViewById(R.id.detailtextview1);
         details_TextView = (TextView) findViewById(R.id.detail_AllDetails);
 
+        //make textview scrollable
+        details_TextView.setMovementMethod(new ScrollingMovementMethod());
+
+        //Retrieving data passed with intent from saved shows activity.
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+        if (b != null) {
+            String seriesNameStr = (String) b.get("SERIESNAME");
+            HashMap<String, String> series = (HashMap<String, String>) b.get("SERIESDATA");
+            seriesData = new SeriesData(series);
+            textviewname.setText(seriesNameStr);
+        }
+
+        //Display all of the series data from the seriesData object
+        details_TextView.setText(seriesData.toString());
+
         //Button to return to saved shows list
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,30 +69,15 @@ public class SeriesDetail extends ActionBarActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                //.putExtra("keywords",actv.getText().toString()));
-                //actv.setText("");
             }
         });
 
-        //Retrieving data passed with intent from saved shows activity.
-        Intent intent = getIntent();
-        Bundle b = intent.getExtras();
-        if (b != null) {
-            String seriesNameStr = (String) b.get("SERIESNAME");
-            testData = (HashMap<String, String>) b.get("SERIESDATA");
-            textviewname.setText(seriesNameStr);
-        }
-
-        //Display all of the series data from the seriesData object
-        details_TextView.setText(testData.toString());
-
-
-        //Do something when delete button is clicked on
-        /*
-        btnDelete.setOnClickListener(this);
-
-        Intent intent = getIntent();
-        */
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.deleteShow(seriesData.get("seriesid"));
+            }
+        });
     }
 
 

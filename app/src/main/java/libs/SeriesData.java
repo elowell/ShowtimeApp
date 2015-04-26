@@ -9,6 +9,7 @@ package libs;
 
 import android.util.Log;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -59,6 +60,19 @@ public class SeriesData extends LinkedHashMap<String, String> {
         for (String field : _fields)     //then add custom fields
             fields.add(field);
     }
+
+    public SeriesData(HashMap<String, String> series) {
+        this();
+
+        Iterator entries = series.entrySet().iterator();
+        while(entries.hasNext()) {
+            LinkedHashMap.Entry entry = (LinkedHashMap.Entry) entries.next();
+
+            this.put(entry.getKey().toString(), entry.getValue().toString());
+        }
+    }
+
+
 
 
     /* Methods */
