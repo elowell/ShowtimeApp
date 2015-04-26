@@ -71,6 +71,8 @@ public class SearchResults extends ActionBarActivity {
         {
             saveToFavs.setEnabled(false);
             saveToFavs.getBackground().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
+            getFullRecord.setEnabled(false);
+            getFullRecord.getBackground().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
         }
 
         //set listener for back

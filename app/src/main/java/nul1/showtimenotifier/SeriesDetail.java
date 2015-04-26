@@ -55,7 +55,7 @@ public class SeriesDetail extends ActionBarActivity {
             }
         });
 
-        //attempting to pass the name of the item clicked
+        //Retrieving data passed with intent from saved shows activity.
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
         if (b != null) {
