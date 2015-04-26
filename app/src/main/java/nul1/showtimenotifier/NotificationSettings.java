@@ -6,15 +6,14 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.view.View.OnClickListener;
 
 public class NotificationSettings extends ActionBarActivity {
 
     private CheckBox chkWeek, chkDay, chkHour;
     private Button SaveSettings;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +36,10 @@ public class NotificationSettings extends ActionBarActivity {
         chkDay     = (CheckBox) findViewById(R.id.radioButtonDay);
         chkHour    = (CheckBox) findViewById(R.id.radioButtonHour);
         SaveSettings = (Button) findViewById(R.id.button6);
+
+
+
+
 
         SaveSettings.setOnClickListener(new OnClickListener() {
 

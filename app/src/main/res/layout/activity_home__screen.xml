@@ -23,9 +23,9 @@
         android:layout_height="wrap_content"
         android:text="Search For Shows"
         android:id="@+id/searchbutton"
+        android:onClick="onSearchButtonClick"
         android:layout_below="@+id/autoCompleteTextView"
-        android:layout_centerHorizontal="true"
-        android:onClick="onSearchButtonClick"/>
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -58,11 +58,15 @@
         android:layout_alignEnd="@+id/notificationsettingsbutton" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/imageView"
         android:src="@drawable/tvsnlogo"
         android:layout_below="@+id/notificationsettingsbutton"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:cropToPadding="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"/>
 
 </RelativeLayout>

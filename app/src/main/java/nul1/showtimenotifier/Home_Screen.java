@@ -26,7 +26,6 @@ import java.net.URLEncoder;
 
 import libs.SeriesData;
 
-
 public class Home_Screen extends ActionBarActivity {
     //save context for use in anonymous classes
     final Context mContext = this;
@@ -35,6 +34,7 @@ public class Home_Screen extends ActionBarActivity {
     final SeriesData seriesData = new SeriesData();
 
     LinearLayout mLinearLayout;
+
 
     //onCreate
     @Override
@@ -136,6 +136,7 @@ public class Home_Screen extends ActionBarActivity {
             }
         });
 
+        //Adds logo image
         ImageView i = new ImageView(this);
 
 
