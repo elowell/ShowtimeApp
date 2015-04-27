@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".Home_Screen"
-    android:background="#FFFFFF">
+    android:background="#D1EDFF">
 
 
     <Button
@@ -26,11 +26,9 @@
         android:layout_height="wrap_content"
         android:text="My Shows List"
         android:id="@+id/showslistbutton"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="56dp"
         android:background="#B2B2B2"
         android:layout_below="@+id/searchbutton"
-        android:layout_toRightOf="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -64,8 +62,8 @@
         android:layout_alignWithParentIfMissing="false"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/autoCompleteTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp" />
 
 </RelativeLayout>
