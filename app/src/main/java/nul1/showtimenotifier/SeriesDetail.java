@@ -85,6 +85,7 @@ public class SeriesDetail extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     @Override

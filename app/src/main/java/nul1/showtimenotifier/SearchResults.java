@@ -67,7 +67,7 @@ public class SearchResults extends ActionBarActivity {
 
 
         //Check if seriesID is present. If seriesID not present, then no results were returned
-        //If no results were returned, deactivate save button.
+        //If no results were returned, deactivate save and get full record buttons.
         if(seriesID==null)
         {
             saveToFavs.setEnabled(false);
@@ -121,6 +121,7 @@ public class SearchResults extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 //save full series data to db
+
                 db.saveShow(seriesData);
 
                 saveToFavs.setEnabled(false);
