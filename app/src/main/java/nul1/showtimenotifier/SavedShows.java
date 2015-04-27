@@ -141,7 +141,7 @@ public class SavedShows extends ActionBarActivity {
                 daysUntil.setText("" + days + " Day");
             }
             else if (days == -1) {
-                daysUntil.setText("Ended");
+                daysUntil.setText("Ended"); //If the show is over.
             }
             else {
                 daysUntil.setText("" + days + " Days");
