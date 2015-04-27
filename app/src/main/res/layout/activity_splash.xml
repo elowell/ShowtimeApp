@@ -8,6 +8,8 @@
     android:background="#D1EDFF">
 
     <TextView android:text="Your app is loading now..." android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
