@@ -135,10 +135,13 @@ public class SavedShows extends ActionBarActivity {
             //If-else statements for displaying right number for days.
             long days = daysUntilNextShowing(series);
             if (days == 0) {
-                daysUntil.setText("NA");
+                daysUntil.setText("Today");
             }
             else if (days == 1) {
                 daysUntil.setText("" + days + " Day");
+            }
+            else if (days == -1) {
+                daysUntil.setText("Ended");
             }
             else {
                 daysUntil.setText("" + days + " Days");
@@ -195,6 +198,11 @@ public class SavedShows extends ActionBarActivity {
     //This allows quick visualization of when the next episode is in listview
     //Pass it a series variable with a next showing field, and it will calculate.
     public long daysUntilNextShowing(SeriesData series) {
+
+        if(series.get("status").equals("Ended")) {
+            return -1;
+        }
+
         long daysBetween = 0;
         Calendar today = Calendar.getInstance();        //get today's date
         //Set date back to time 00:00:00
@@ -215,6 +223,12 @@ public class SavedShows extends ActionBarActivity {
         } catch (Exception e) {
           //TODO Auto-Generated catch block  ;
         }
+
+        //Set episode date and time to 00:00:00
+        episode_date.set(Calendar.HOUR_OF_DAY, 0);
+        episode_date.set(Calendar.MINUTE, 0);
+        episode_date.set(Calendar.SECOND, 0);
+        episode_date.set(Calendar.MILLISECOND, 0);
 
         //Increment today's date and counter as long as it is still before the episode date
         while(today.before(episode_date))

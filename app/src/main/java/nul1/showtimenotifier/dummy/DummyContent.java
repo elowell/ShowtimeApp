@@ -1,4 +1,4 @@
-package nul.showtimenotifier.dummy;
+package nul1.showtimenotifier.dummy;
 
 import java.util.ArrayList;
 import java.util.HashMap;
