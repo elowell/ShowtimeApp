@@ -32,7 +32,7 @@ public class SeriesDetail extends ActionBarActivity {
     //Initialize a SeriesData class object to get and display all of the show information.
     SeriesData seriesData = new SeriesData();
 
-    //declare dboperations instance
+    //declare db operations instance
     DBOperations db = new DBOperations(this);
 
     @Override

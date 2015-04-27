@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import android.util.Log;
@@ -19,13 +21,10 @@ public class DBOperations {
 
     //All database functions, including write, retrieve, update, delete
 
-
-
     private DBHelper dbHelper;
+
     //Context for DBHelper class
-    public DBOperations(Context context) {
-        dbHelper = new DBHelper(context);
-    }
+    public DBOperations(Context context) {   dbHelper = new DBHelper(context);   }
 
     //Write (save) show to database.
     public int saveShow(SeriesData series) {
@@ -34,21 +33,14 @@ public class DBOperations {
 
         //Get values to be stored in database from saved show.
         ContentValues values = new ContentValues();
-        values.put("seriesid", series.get("seriesid"));
-        values.put("seriesname", series.get("seriesname"));
-        values.put("genre", series.get("genre"));
-        values.put("overview", series.get("overview"));
-        values.put("status", series.get("status"));
-        values.put("dayofweek", series.get("dayofweek"));
-        values.put("time", series.get("time"));
-        values.put("network", series.get("network"));
-        values.put("runtime", series.get("runtime"));
-        values.put("rating", series.get("rating"));
-        values.put("ratingcount", series.get("ratingcount"));
-        values.put("actors", series.get("actors"));
-        values.put("contentrating", series.get("contentrating"));
-        values.put("firstaired", series.get("firstaired"));
-        values.put("nextairdate", series.get("nextairdate"));
+
+        Iterator entries = series.entrySet().iterator();
+        while(entries.hasNext()) {
+            LinkedHashMap.Entry entry = (LinkedHashMap.Entry) entries.next();
+
+            if(series.fields.contains(entry.getKey().toString()))
+                values.put(entry.getKey().toString(), entry.getValue().toString());
+        }
 
         Log.d("DBHelper.saveShow: ", values.toString());
 

@@ -22,7 +22,7 @@ public class SeriesData extends LinkedHashMap<String, String> {
 
     /* Fields */
     //tag labels of interest to be extracted from TVDB XML
-    ArrayList<String> fields = new ArrayList<String>();
+    public ArrayList<String> fields = new ArrayList<String>();
 
     public final static String TVDB_API_KEY = "531FC560FB062CB3";
 

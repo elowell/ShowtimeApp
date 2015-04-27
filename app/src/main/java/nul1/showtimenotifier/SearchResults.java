@@ -90,78 +90,44 @@ public class SearchResults extends ActionBarActivity {
             }
         });
 
-        //set listener for get_full_record
-        getFullRecord.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                //init requestqueue
-                RequestQueue queue = Volley.newRequestQueue(mContext);
+        //init requestqueue
+        RequestQueue queue = Volley.newRequestQueue(mContext);
 
-                //construct url
-                String url = "http://thetvdb.com/api/" + seriesData.TVDB_API_KEY
-                                                       + "/series/" + seriesID + "/all/";
+        //construct url
+        String url = "http://thetvdb.com/api/" + seriesData.TVDB_API_KEY
+                        + "/series/" + seriesID + "/all/";
 
-                //init string request
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                        new Response.Listener<String>() {           //if no error occurs
-                            @Override
-                            public void onResponse(String response) {   //when response is returned
-                                //insert XML tokens into series data struct
-                                seriesData.insertSelectXML(response.split(">"));
-
-                                //reset text view
-                                resultsView.setText(seriesData.toString());
-                            }
-                        }, new Response.ErrorListener() {               //if error occurs
+        //init string request
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {           //if no error occurs
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.d("Error: ", error.toString());             //log error
-                    }
-                });
+                    public void onResponse(String response) {   //when response is returned
+                        //insert XML tokens into series data struct
+                        seriesData.insertSelectXML(response.split(">"));
 
-                //add request to requestqueue
-                queue.add(stringRequest);
+                        //reset text view
+                        resultsView.setText(seriesData.toString());
+                    }
+                }, new Response.ErrorListener() {               //if error occurs
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Error: ", error.toString());             //log error
             }
         });
+
+        //add request to requestqueue
+        queue.add(stringRequest);
 
         //set listener for save
         saveToFavs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //init requestqueue
-                RequestQueue queue = Volley.newRequestQueue(mContext);
-
-                //construct url
-                String url = "http://thetvdb.com/api/" + seriesData.TVDB_API_KEY
-                        + "/series/" + seriesID + "/all/";
-
-                //init string request
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                        new Response.Listener<String>() {           //if no error occurs
-                            @Override
-                            public void onResponse(String response) {   //when response is returned
-                                //insert XML tokens into series data struct
-                                seriesData.insertSelectXML(response.split(">"));
-
-                                //reset text view
-                                resultsView.setText(seriesData.toString());
-                            }
-                        }, new Response.ErrorListener() {               //if error occurs
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.d("Error: ", error.toString());             //log error
-                    }
-                });
-
-                //add request to requestqueue
-                queue.add(stringRequest);
-
                 //save full series data to db
                 db.saveShow(seriesData);
 
-                //showdb.AddShow(seriesData);
                 saveToFavs.setEnabled(false);
                 saveToFavs.getBackground().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
+
                 mHandler.postDelayed(mLaunchTask,1000);
             }
 
@@ -169,7 +135,7 @@ public class SearchResults extends ActionBarActivity {
             private Runnable mLaunchTask = new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(SearchResults.this,Home_Screen.class);
+                    Intent intent = new Intent(SearchResults.this, Home_Screen.class);
                     startActivity(intent);
                 }
             };
