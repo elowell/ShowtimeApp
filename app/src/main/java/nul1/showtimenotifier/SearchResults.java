@@ -52,7 +52,6 @@ public class SearchResults extends ActionBarActivity {
         //setup UI elements
         Button search_home_button = (Button)findViewById(R.id.backbutton);
         final TextView resultsView = (TextView) findViewById(R.id.results_view);
-        Button getFullRecord = (Button) findViewById(R.id.get_full_record);
         final Button saveToFavs = (Button) findViewById(R.id.save_to_favs);
 
         //make textview scrollable
@@ -73,8 +72,6 @@ public class SearchResults extends ActionBarActivity {
         {
             saveToFavs.setEnabled(false);
             saveToFavs.getBackground().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
-            getFullRecord.setEnabled(false);
-            getFullRecord.getBackground().setColorFilter(Color.DKGRAY, PorterDuff.Mode.MULTIPLY);
         }
 
         //set listener for back
@@ -90,6 +87,7 @@ public class SearchResults extends ActionBarActivity {
             }
         });
 
+        //Automatically get full series record
         //init requestqueue
         RequestQueue queue = Volley.newRequestQueue(mContext);
 

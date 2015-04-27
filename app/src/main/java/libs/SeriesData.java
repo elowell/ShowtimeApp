@@ -68,7 +68,8 @@ public class SeriesData extends LinkedHashMap<String, String> {
         while(entries.hasNext()) {
             LinkedHashMap.Entry entry = (LinkedHashMap.Entry) entries.next();
 
-            this.put(entry.getKey().toString(), entry.getValue().toString());
+            if(entry.getValue() != null)
+                this.put(entry.getKey().toString(), entry.getValue().toString());
         }
     }
 
@@ -198,7 +199,7 @@ public class SeriesData extends LinkedHashMap<String, String> {
         String str = "";
 
         for (String field : fields) {
-            if (this.get(field) != null)
+            if (this.get(field) != null && this.get(field) != "")
                 str += field + ": " + this.get(field) + "\n\n";
         }
 
@@ -206,7 +207,8 @@ public class SeriesData extends LinkedHashMap<String, String> {
         while(entries.hasNext()) {
             LinkedHashMap.Entry entry = (LinkedHashMap.Entry) entries.next();
 
-            if (!fields.contains(entry.getKey().toString()))
+            if (!fields.contains(entry.getKey().toString()) && entry.getValue() != null
+                    && entry.getValue().toString() != "")
                 str += entry.getKey().toString() + ": " + entry.getValue().toString() + "\n\n";
         }
 
@@ -219,7 +221,7 @@ public class SeriesData extends LinkedHashMap<String, String> {
         String str = "";
 
         for (String field : fields) {
-            if (this.get(field) != null) {
+            if (this.get(field) != null && this.get(field) != "") {
                 if (field != "seriesid")
                     str += this.get(field) + "\n\n";
             }
@@ -229,7 +231,8 @@ public class SeriesData extends LinkedHashMap<String, String> {
         while(entries.hasNext()) {
             LinkedHashMap.Entry entry = (LinkedHashMap.Entry) entries.next();
 
-            if (!fields.contains(entry.getKey().toString()))
+            if (!fields.contains(entry.getKey().toString()) && entry.getValue() != null
+                    && entry.getValue().toString() != "")
                 str += entry.getKey().toString() + ": " + entry.getValue().toString() + "\n\n";
         }
 

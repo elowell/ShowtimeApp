@@ -51,9 +51,9 @@ public class DBOperations {
     }
 
 
-    public void deleteShow(String show_Id) {
+    public void deleteShow(String series_name) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        db.delete("Series", "seriesid= ?", new String[] {String.valueOf(show_Id)});
+        db.delete("Series", "seriesname=?", new String[] {String.valueOf(series_name)});
         db.close();
     }
 

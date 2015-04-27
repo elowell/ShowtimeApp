@@ -75,7 +75,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     final private static String CREATE_SERIES_CMD =
 
-        "CREATE TABLE series ("+ SERIES_ID + " TEXT PRIMARY KEY, "+ SERIES_NAME + " TEXT NOT NULL, "
+        "CREATE TABLE series ("+ SERIES_ID + " TEXT, "+ SERIES_NAME + " TEXT NOT NULL PRIMARY KEY, "
                                + GENRE + " TEXT, "+ OVERVIEW + " TEXT, "+ STATUS + " TEXT, "
                                + DAYOFWEEK + " TEXT, "+ TIME + " TEXT, "+ NETWORK + " TEXT, "
                                + RUNTIME + " TEXT, "+ RATING + " TEXT, "+ RATINGCOUNT + " TEXT, "

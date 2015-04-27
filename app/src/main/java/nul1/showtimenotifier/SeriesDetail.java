@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.util.Log;
 
 import java.util.HashMap;
 
@@ -58,8 +59,10 @@ public class SeriesDetail extends ActionBarActivity {
             textviewname.setText(seriesNameStr);
         }
 
+        Log.d("SeriesDetail: ", seriesData.toString());
+
         //Display all of the series data from the seriesData object
-        details_TextView.setText(seriesData.toString());
+        details_TextView.setText(seriesData.toStringFancy());
 
         //Button to return to saved shows list
         btnClose.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +78,7 @@ public class SeriesDetail extends ActionBarActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db.deleteShow(seriesData.get("seriesid"));
+                db.deleteShow(seriesData.get("seriesname"));
                 Intent intent = new Intent(SeriesDetail.this, SavedShows.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -83,7 +86,6 @@ public class SeriesDetail extends ActionBarActivity {
             }
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

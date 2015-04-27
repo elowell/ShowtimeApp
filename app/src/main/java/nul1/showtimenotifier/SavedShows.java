@@ -135,7 +135,7 @@ public class SavedShows extends ActionBarActivity {
             //If-else statements for displaying right number for days.
             long days = daysUntilNextShowing(series);
             if (days == 0) {
-                daysUntil.setText("NA");
+                daysUntil.setText("Not scheduled.");
             }
             else if (days == 1) {
                 daysUntil.setText("" + days + " Day");
@@ -217,7 +217,10 @@ public class SavedShows extends ActionBarActivity {
         }
 
         //Increment today's date and counter as long as it is still before the episode date
-        while(today.before(episode_date))
+        while(today.before(episode_date)
+                && (today.get(Calendar.DATE) != episode_date.get(Calendar.DATE)
+                || today.get(Calendar.MONTH) != episode_date.get(Calendar.MONTH)
+                || today.get(Calendar.YEAR)  != episode_date.get(Calendar.YEAR)))
         {
             today.add(Calendar.DAY_OF_MONTH, 1);
             daysBetween++;
