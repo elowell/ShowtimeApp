@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="nul1.showtimenotifier.SearchResults"
-    android:background="#60FAFF">
+    android:background="#D1EDFF">
 
     <!--<ListView
         android:layout_width="wrap_content"
