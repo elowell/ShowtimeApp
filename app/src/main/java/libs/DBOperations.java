@@ -2,17 +2,14 @@ package libs;
 
 import android.content.ContentValues;
 import android.content.Context;
-
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
-
-import android.util.Log;
-
 
 /**
  * Created by nickhall on 4/26/15.
@@ -55,7 +52,12 @@ public class DBOperations {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.delete("Series", "seriesname=?", new String[] {String.valueOf(series_name)});
         db.close();
+
+
     }
+
+
+
 
     //gets all saved series and returns in datalistview format
     public List<SeriesData> getDataForListView() {
@@ -98,7 +100,6 @@ public class DBOperations {
 
         return listOfSeries;
     }
-
 
 
 

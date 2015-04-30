@@ -26,7 +26,7 @@ import libs.SeriesData;
 
 
 public class SavedShows extends ActionBarActivity {
-
+    public int NUMBEROFSAVEDSHOWS;
     final Context mContext = this;
 
     //Trying to get intent passing to work
@@ -60,7 +60,7 @@ public class SavedShows extends ActionBarActivity {
             }
         });
 
-
+        NUMBEROFSAVEDSHOWS=seriesDataAdapter.getCount();
         //get seriesdata for user from DB
         //SeriesData[] user_favs = DBHelper.getSeriesData();
         /*                         ^ not implemented yet, use test structs in DBHelper */
@@ -91,6 +91,7 @@ public class SavedShows extends ActionBarActivity {
         //The adapter then passes this list to the custom listview object for display purposes
         //The function getDataForListView() assembles the list from the database.
         List<SeriesData> listOfSeries = getDataForListView();
+
 
         @Override
         public int getCount() {
@@ -135,11 +136,11 @@ public class SavedShows extends ActionBarActivity {
             //If-else statements for displaying right number for days.
             long days = daysUntilNextShowing(series);
             if (days == 0) {
-<<<<<<< HEAD
+//<<<<<<< HEAD
                 daysUntil.setText("Not scheduled.");
-=======
+//=======
                 daysUntil.setText("Today");
->>>>>>> origin/master
+//>>>>>>> origin/master
             }
             else if (days == 1) {
                 daysUntil.setText("" + days + " Day");

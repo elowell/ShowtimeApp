@@ -36,10 +36,16 @@
         <activity
             android:name=".NotificationSettings"
             android:label="@string/title_activity_notification_settings" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".SeriesDetail"
             android:label="SeriesDetail" >
         </activity>
+        <receiver android:name=".NotificationPublisher" />
     </application>
 
 </manifest>

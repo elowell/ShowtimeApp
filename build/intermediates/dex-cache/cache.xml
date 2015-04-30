@@ -2,54 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/Users/nickyjhall/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jar="C:\Users\Evan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/nickyjhall/Documents/GitHub Projects/ShowtimeApp/ShowtimeApp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-fb3d258806eeae0d0a21df68700e12e478323042.jar" />
+        <dex dex="C:\Users\Evan\Documents\GitHub\ShowtimeApp\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-15adf554fd88e52ea27900760e1fc76dda41e6d8.jar" />
     </item>
     <item
-        jar="/Users/nickyjhall/Documents/GitHub Projects/ShowtimeApp/ShowtimeApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/nickyjhall/Documents/GitHub Projects/ShowtimeApp/ShowtimeApp/app/build/intermediates/pre-dexed/debug/classes-329c968f363f319d6c02bc50cc069a62ef8f9884.jar" />
-    </item>
-    <item
-<<<<<<< HEAD
-        jar="/Users/tfarrell/Code/ShowtimeApp/app/src/main/java/libs/volley.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
-        <dex dex="/Users/tfarrell/Code/ShowtimeApp/app/build/intermediates/pre-dexed/debug/volley-194fa6760a3c34c0564519a55a4c448f27aa50b5.jar" />
-    </item>
-    <item
-        jar="/Users/tfarrell/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/tfarrell/Code/ShowtimeApp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-0d829673a3189b7ad5955aceeb14b5a91ecae030.jar" />
-=======
-        jar="/Users/nickyjhall/Documents/GitHub Projects/ShowtimeApp/ShowtimeApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/nickyjhall/Documents/GitHub Projects/ShowtimeApp/ShowtimeApp/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-0c662c7ca42f62275e468e700ca68bde5f85ec7c.jar" />
-    </item>
-    <item
-        jar="/Users/nickyjhall/Documents/GitHub Projects/ShowtimeApp/ShowtimeApp/app/src/main/java/libs/volley.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
-        <dex dex="/Users/nickyjhall/Documents/GitHub Projects/ShowtimeApp/ShowtimeApp/app/build/intermediates/pre-dexed/debug/volley-613bc252930db11156bcb2e456ac58884c8a010e.jar" />
->>>>>>> origin/master
-    </item>
-    <item
-        jar="/Users/nickyjhall/Documents/GitHub Projects/ShowtimeApp/ShowtimeApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jar="C:\Users\Evan\Documents\GitHub\ShowtimeApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/nickyjhall/Documents/GitHub Projects/ShowtimeApp/ShowtimeApp/app/build/intermediates/pre-dexed/debug/classes-97df60bd28b805ece2a3c1485fb8634df3d1531f.jar" />
+        <dex dex="C:\Users\Evan\Documents\GitHub\ShowtimeApp\app\build\intermediates\pre-dexed\debug\classes-c6a4e1e5629cbfcfd2dbb388230d13a98537dec4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Evan\Documents\GitHub\ShowtimeApp\app\src\main\java\libs\volley.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d4aaa36e04ee71a83444f8367c97a46fda662d2c">
+        <dex dex="C:\Users\Evan\Documents\GitHub\ShowtimeApp\app\build\intermediates\pre-dexed\debug\volley-a94334537dd5be20af0f47cf295541de44606c16.jar" />
+    </item>
+    <item
+        jar="C:\Users\Evan\Documents\GitHub\ShowtimeApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\Evan\Documents\GitHub\ShowtimeApp\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-4b5a436ed7b12fc0e566c4f858f923f7135ebe44.jar" />
+    </item>
+    <item
+        jar="C:\Users\Evan\Documents\GitHub\ShowtimeApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\Evan\Documents\GitHub\ShowtimeApp\app\build\intermediates\pre-dexed\debug\classes-87be27ff9dfee8c69508fee4e2af3b960c1abeac.jar" />
     </item>
 
 </items>
